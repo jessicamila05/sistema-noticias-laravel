@@ -34,14 +34,31 @@
                                 $user=$news->find($news->id)->relUsers;
                                 @endphp
                                 <tr>
-                                    <td>
+                                    <td  class="card col-xs-2">
                                         <a href="{{url("noticias/$news->id")}}">
                                             <p class="title">{{$news->theme}}</p>
+                                       
+                                            <p class="card-text">
+                                                <!-- limitar exibição de texto -->
+                                                @php 
+                                                    $text = $news->text;
+                                                    if(strlen($text) > 150){
+                                                        echo substr($text, 0, 150 ) ."...";
+                                                    }
+                                                    else{
+                                                        echo $text;
+                                                    }
+                                                @endphp
+                                            </p>
+                                            <p class="text-muted">{{$user->name}}</p>
                                         </a>
-                                        <!--<p class="text-muted">@php echo $news->text @endphp</p>-->
-                                        <p class="text-muted">{{$user->name}}</p>
                                     </td>
                                     <td class="td-actions text-right">
+                                    <a href="{{url("noticias/$news->id")}}">
+                                    <button type="button" rel="tooltip" title="" class="btn btn-link" data-original-title="Edit Task">
+                                                <i class="tim-icons icon-paper"></i>
+                                            </button>
+                                        </a>
                                         <a href="{{url("noticias/$news->id/edit")}}">
                                             <button type="button" rel="tooltip" title="" class="btn btn-link" data-original-title="Edit Task">
                                                 <i class="tim-icons icon-pencil"></i>

@@ -17,8 +17,25 @@
                     @endphp
                 </string>
                 {{$user->name}}</br>
-            </div>
+                <br/><br/>
+                <div class="col text-center">
+                    <a href="{{url("noticias/$news->id/edit")}}">
+                        <button type="button" class="btn btn-primary">
+                            <i class="tim-icons icon-pencil"></i>
+                            Editar
+                        </button>
+                    </a>
+                    <a href="{{url("noticias/$news->id")}}" class="js-del">
+                        <button type="button" class="btn btn-danger">
+                            <i class="tim-icons icon-trash-simple"></i>
+                            Deletar
+                        </button>
+                    </a>                   
+                </div>
+                <br/>
+            </div>    
         </div>
+    </div>
 @endsection
 
 @push('js')

@@ -28,7 +28,7 @@
                                 @endforeach
                             </select>
                         </div>
-                        <div class="formImp col-md-10">
+                        <div class="formImp col-md-20">
                         <div class="col">
                         <textarea class="form-control" type="text" id="text" name="text" placeholder="Texto" value="{{$news->text ?? ''}}" required>{{$news->text ?? ''}}</textarea>
                         </div>
@@ -40,7 +40,10 @@
                                 alert(objEditor1.getData());
                             </script>
                         </div>
-                        <input class="btn btn-primary" type="submit" value="@if(isset($news)) Editar @else Cadastrar @endif">
+                        <br/>
+                        <div class="col text-center">
+                            <input class="btn btn-primary" type="submit" value="@if(isset($news)) Editar @else Cadastrar @endif">
+                        </div>
                     </div>
                 </form>
             </div>
