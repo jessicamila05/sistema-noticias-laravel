@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Http\Middleware\ControlAccessNews;
 
 class News extends Model
 {
@@ -16,5 +17,4 @@ class News extends Model
     {
         return $this->hasOne('App\Models\User','id', 'user_id');
     }
-    
 }
