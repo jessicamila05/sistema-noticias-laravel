@@ -19,6 +19,8 @@
         <!-- CSS -->
         <link href="{{ asset('white') }}/css/white-dashboard.css?v=1.0.0" rel="stylesheet" />
         <link href="{{ asset('white') }}/css/theme.css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="css/app.css">
+       <link rel="stylesheet" href="{{('css/app.css')}}"> 
     </head>
     <body class="white-content {{ $class ?? '' }}">
         @auth()
@@ -98,6 +100,11 @@
 
         <script src="{{ asset('white') }}/js/white-dashboard.min.js?v=1.0.0"></script>
         <script src="{{ asset('white') }}/js/theme.js"></script>
+
+        <!--  Função para a ação de deletar    -->
+        <script src="{{ asset('white') }}/js/javascript.js"></script>
+        
+        
 
         @stack('js')
 
@@ -207,5 +214,6 @@
             });
         </script>
         @stack('js')
+         
     </body>
 </html>
